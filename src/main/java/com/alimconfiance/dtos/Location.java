@@ -1,3 +1,4 @@
+package com.alimconfiance.dtos;
 public class Location {
 
     private String city;
