@@ -118,8 +118,6 @@ public class RestaurantService {
             Map<String, Object> response = new HashMap<String, Object>();
             response.put("restaurants", restaurants);
             response.put("total_count", totalCount);
-            System.out.println(response);
-            System.out.println("hello");
             return ResponseEntity.ok(response);
         }
 

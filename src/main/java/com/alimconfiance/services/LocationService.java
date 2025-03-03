@@ -21,7 +21,6 @@ public class LocationService {
      public ResponseEntity<List<Location>> getLocations(final String userInput) {
         String url =  this.baseLocationUrl + "/catalog/datasets/georef-france-commune/records?limit=7&where=com_name like \"" + userInput + "\" or dep_code like \"" +
                 userInput + "\" or reg_name like \"" + userInput + "\" or dep_name like \"" + userInput + "\"";
-        System.out.println(url);
         try {
             Map<String, Object> apiResponse = restTemplate.getForObject( url, Map.class);
 
@@ -37,8 +36,7 @@ public class LocationService {
                         })
                         .toList();
 
-                System.out.println(locations);
-    
+
                 return ResponseEntity.ok(locations);
             }
     
