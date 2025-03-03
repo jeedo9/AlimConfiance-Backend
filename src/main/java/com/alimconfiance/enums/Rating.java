@@ -1,23 +1,26 @@
 package com.alimconfiance.enums;
 
 public enum Rating {
-    EXCELLENT("Excellent", "Très satisfaisant"),
-    GOOD("Good", "Satisfaisant"),
-    AVERAGE("Average", "A améliorer"),
-    POOR("Poor", "A corriger de manière urgente");
+    EXCELLENT("Très satisfaisant"),
+    GOOD("Satisfaisant"),
+    AVERAGE("A améliorer"),
+    POOR("A corriger de manière urgente");
 
-    private String name;
     private String description;
 
-    private Rating(final String name, final String description) {
-        this.name = name;
+    private Rating(final String description) {
         this.description = description;
     }
 
-    public String getName() {
-        return this.name;
-    }
+  
     public String getDescription() {
         return this.description;
+    }
+
+    public static Rating fromString(final String stringRating) {
+        for (Rating rating : Rating.values()) {
+            if (rating.getDescription().equalsIgnoreCase(stringRating)) return rating;
+        }
+        throw new IllegalArgumentException("Unknown rating: " + stringRating);
     }
 }

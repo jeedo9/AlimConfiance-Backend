@@ -1,10 +1,22 @@
 package com.alimconfiance.controllers;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.alimconfiance.dtos.Location;
+import com.alimconfiance.services.LocationService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/location")
 public class LocationController {
-    
+    @Autowired
+    private LocationService locationService;
+
+    @GetMapping()
+    public ResponseEntity<List<Location>> getLocations(@RequestParam(value = "query") final String userInput) {
+        return this.locationService.getLocations(userInput);
+    }
 }

@@ -1,5 +1,7 @@
 package com.alimconfiance.dtos;
 import com.alimconfiance.enums.Rating;
+import java.util.Optional;
+
 public class Restaurant {
     private String name;
     private String address;
@@ -8,10 +10,11 @@ public class Restaurant {
     private String inspectionDate;
     private String activity;
     private Rating rating;
+    private String type;
 
     public Restaurant(final String name, final String address, final String postalCode,
                       final String city, final String inspectionDate,
-                      final String activity, final Rating rating) {
+                      final String activity, final Rating rating, final String type) {
         this.name = name;
         this.address = address;
         this.postalCode = postalCode;
@@ -19,6 +22,7 @@ public class Restaurant {
         this.inspectionDate = inspectionDate;
         this.activity = activity;
         this.rating = rating;
+        this.type = type;
     }
 
     public String getName() {
@@ -41,5 +45,8 @@ public class Restaurant {
     }
     public Rating getRating() {
         return this.rating;
+    }
+    public String getType(){
+        return this.type;
     }
 }
