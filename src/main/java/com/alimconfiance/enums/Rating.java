@@ -8,7 +8,7 @@ public enum Rating {
 
     private String description;
 
-    private Rating(final String description) {
+    Rating(final String description) {
         this.description = description;
     }
 

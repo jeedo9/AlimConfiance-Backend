@@ -1,6 +1,5 @@
 package com.alimconfiance.dtos;
 import com.alimconfiance.enums.Rating;
-import java.util.Optional;
 
 public class Restaurant {
     private String name;
